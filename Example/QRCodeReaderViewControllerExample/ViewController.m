@@ -39,7 +39,7 @@
 @interface ViewController ()<AVAudioPlayerDelegate>
 @property (strong, nonatomic) NSData *mp3Data;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
-@property (nonatomic, strong) dispatch_source_t timerSource;
+@property (strong, nonatomic) dispatch_source_t timerSource;
 @property (getter = isObservingMessages) BOOL observingMessages;
 
 @property (strong, nonatomic) AVCaptureSession *photoSession;
@@ -47,8 +47,7 @@
 @property (strong, nonatomic) AVCaptureConnection *videoConnection;
 
 @property (strong, nonatomic) AFHTTPRequestOperationManager *manager;
-
-
+@property (strong, nonatomic) NSArray *nextagents;
 @end
 
 
@@ -334,6 +333,9 @@
 
 - (IBAction)scanAction:(id)sender
 {
+    //////MODIFY IT TO: SHOT a photo and process
+    //////OR stop at the first recognition
+    
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     //dispatch_suspend(self.timerSource);
     
@@ -362,17 +364,20 @@
         
     }];
     
-    //Valid url?
-    NSURL *candidateURL = [NSURL URLWithString:result];
-    if([candidateURL.host isEqualToString:@"lostpub.com"] && [candidateURL.scheme isEqualToString:@"http"]) {
-        //validated url address
-        [self fetchAgent:result];
-    }else{
-        NSLog(@"not an url");
-        
-    }
-    //[self startCamera];
-    //dispatch_resume(self.timerSource);
+    //prevent multuple threads
+    
+        //Valid url?
+        NSURL *candidateURL = [NSURL URLWithString:result];
+        if([candidateURL.host isEqualToString:@"lostpub.com"] && [candidateURL.scheme isEqualToString:@"http"]) {
+            //validated url address
+            [self fetchAgent:result];
+        }else{
+            NSLog(@"not an url");
+            
+        }
+        //[self startCamera];
+        //dispatch_resume(self.timerSource);
+
     
 }
 
@@ -387,59 +392,79 @@
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
         //parse and sort
-        NSSortDescriptor *sortDescriptor=[[NSSortDescriptor alloc]initWithKey:@"steps" ascending:1];
-        NSArray *sortDescriptors=[NSArray arrayWithObject:sortDescriptor];
-        NSArray *sortedArr=[responseObject sortedArrayUsingDescriptors:sortDescriptors];
-        
-        //now we got an action array
-        //pick the step 1
-        NSArray *fristAction = sortedArr.firstObject;
-        
-        //if it has audio, fetch it and play
-        NSString *audiourl = [fristAction valueForKey:@"audio"];
-        if (audiourl != nil) {
-            //Is it a mp3 file?
-            //in case string is less than 4 characters long.
-            NSString *trimmedString=[audiourl substringFromIndex:MAX((int)[audiourl length]-4, 0)];
-            if ([trimmedString isEqual:@".mp3"]) {
-                NSLog(@"audio file found: %@", audiourl);
-                [self playAudio:audiourl];
-            }else{
-                NSLog(@"not an audio file");
-            }
-        }
-        
-        //if this action has a process to request
-        NSString* processurl = [fristAction valueForKey:@"process"];
-        if (processurl != nil) {
-            //excute this url by requesting
-        
-        }
-
-        //if next action exist, add a full screen button to it.
-        if (sortedArr.count>1) {
-            NSArray *nextAction;
-            nextAction = [sortedArr objectAtIndex:1];
-            
-            //find next the type of the next action. (for instance, tap)
-            NSString *nextActionType = [nextAction valueForKey:@"nextact_type"];
-            NSString *nextActionProcess = [nextAction valueForKey:@"process"];
-            
-            //regiest the action/action url to the device dynamically. (for instance, tap)
-            //add a full screen button programmatically, and distory it 15s later.
-            //bind the button to another excute funtion
-            //send request to :process
-                //receive feedback from the remote url
-                    //if success, play the audio
-            
-        }
-
+        NSLog(@"%@", responseObject);
+        [self executeAgent:responseObject];
+        //understand the agent
+        //how many steps?
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
     
+}
+
+- (void) executeAgent: (NSArray*)currentAgent {
+
+    //implement first (two) steps
+    NSString *audiourl = [currentAgent valueForKey:@"play"];
+    NSString* processurl = [currentAgent valueForKey:@"process"];
+    NSString* nextinput = [currentAgent valueForKey:@"nextinput"];
+    int thisStepNumber = (int)[currentAgent valueForKey:@"step"];
+    
+    //if it has audio, fetch it and play
+    if (audiourl != nil) {
+        //Is it a mp3 file?
+        //in case string is less than 4 characters long.
+        NSString *trimmedString=[audiourl substringFromIndex:MAX((int)[audiourl length]-4, 0)];
+        if ([trimmedString isEqual:@".mp3"]) {
+            NSLog(@"audio file found: %@", audiourl);
+            [self playAudio:audiourl];
+        }else{
+            NSLog(@"not an audio file");
+        }
+    }
+    
+    //if this action has a process to request
+    if (processurl != nil) {
+        //excute this url by requesting
+        
+    }
+    
+    //implement a button to trigger the next step
+    if([nextinput isEqualToString:@"tap"]){
+        
+        NSArray* nextinput = [currentAgent valueForKey:@"next"];
+        self.nextagents = nextinput;
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        button.tag = thisStepNumber++;
+        [button addTarget:self
+                   action:@selector(doTheNext:)
+         forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"NEXT" forState:UIControlStateNormal];
+        button.frame = CGRectMake(0,0,620,620);
+        button.backgroundColor = [UIColor redColor];
+        
+        [self.view addSubview:button];
+        
+    }
+    
+    if([nextinput isEqualToString:@"auto"]){
+        //[self doTheNext];
+        //wait untill this audio is over?
+    }
+
+}
+
+
+- (void) doTheNext {
+    [self executeAgent:self.nextagents];
+}
+
+- (void) doTheNext:(id)sender {
+    [self executeAgent:self.nextagents];
+    [sender removeFromSuperview];
 }
 
 
@@ -464,11 +489,8 @@
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader
 {
-    if (![self.presentedViewController isBeingDismissed])
-    {
-        [self dismissViewControllerAnimated:YES completion:NULL];
-        //dispatch_resume(self.timerSource);
-    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    //dispatch_resume(self.timerSource);
 }
 
 

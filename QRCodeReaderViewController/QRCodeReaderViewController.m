@@ -82,7 +82,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
   [self stopScanning];
-  
+
   [super viewWillDisappear:animated];
 }
 
@@ -285,6 +285,7 @@
       
       if (_delegate && [_delegate respondsToSelector:@selector(reader:didScanResult:)]) {
         [_delegate reader:self didScanResult:scannedResult];
+          [self stopScanning];
       }
       
       break;
