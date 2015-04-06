@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE2960171987F124008FA93B"
-               BuildableName = "QRCodeReadeViewrController.app"
-               BlueprintName = "QRCodeReadeViewrController"
-               ReferencedContainer = "container:QRCodeReadeViewrController.xcodeproj">
+               BuildableName = "QRCodeReaderViewController.app"
+               BlueprintName = "QRCodeReaderViewController"
+               ReferencedContainer = "container:QRCodeReaderViewController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE29602D1987F124008FA93B"
-               BuildableName = "QRCodeReadeViewrControllerTests.xctest"
-               BlueprintName = "QRCodeReadeViewrControllerTests"
-               ReferencedContainer = "container:QRCodeReadeViewrController.xcodeproj">
+               BuildableName = "QRCodeReaderViewControllerTests.xctest"
+               BlueprintName = "QRCodeReaderViewControllerTests"
+               ReferencedContainer = "container:QRCodeReaderViewController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE29602D1987F124008FA93B"
-               BuildableName = "QRCodeReadeViewrControllerTests.xctest"
-               BlueprintName = "QRCodeReadeViewrControllerTests"
-               ReferencedContainer = "container:QRCodeReadeViewrController.xcodeproj">
+               BuildableName = "QRCodeReaderViewControllerTests.xctest"
+               BlueprintName = "QRCodeReaderViewControllerTests"
+               ReferencedContainer = "container:QRCodeReaderViewController.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE2960171987F124008FA93B"
-            BuildableName = "QRCodeReadeViewrController.app"
-            BlueprintName = "QRCodeReadeViewrController"
-            ReferencedContainer = "container:QRCodeReadeViewrController.xcodeproj">
+            BuildableName = "QRCodeReaderViewController.app"
+            BlueprintName = "QRCodeReaderViewController"
+            ReferencedContainer = "container:QRCodeReaderViewController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE2960171987F124008FA93B"
-            BuildableName = "QRCodeReadeViewrController.app"
-            BlueprintName = "QRCodeReadeViewrController"
-            ReferencedContainer = "container:QRCodeReadeViewrController.xcodeproj">
+            BuildableName = "QRCodeReaderViewController.app"
+            BlueprintName = "QRCodeReaderViewController"
+            ReferencedContainer = "container:QRCodeReaderViewController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE2960171987F124008FA93B"
-            BuildableName = "QRCodeReadeViewrController.app"
-            BlueprintName = "QRCodeReadeViewrController"
-            ReferencedContainer = "container:QRCodeReadeViewrController.xcodeproj">
+            BuildableName = "QRCodeReaderViewController.app"
+            BlueprintName = "QRCodeReaderViewController"
+            ReferencedContainer = "container:QRCodeReaderViewController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

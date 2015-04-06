@@ -48,6 +48,7 @@
 
 @property (strong, nonatomic) AFHTTPRequestOperationManager *manager;
 @property (strong, nonatomic) NSArray *nextagents;
+@property BOOL isWaitingAudio;
 @end
 
 
@@ -61,10 +62,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.isWaitingAudio = false;
     // Do any additional setup after loading the view, typically from a nib.
     
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    
     //[self playAudio:@"http://lostpub.com/27rauschenbergempire1.mp3"];
     
     //[self startCamera];
@@ -392,10 +394,8 @@
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
         //parse and sort
-        NSLog(@"%@", responseObject);
+        //NSLog(@"%@", responseObject);
         [self executeAgent:responseObject];
-        //understand the agent
-        //how many steps?
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -428,7 +428,7 @@
     //if this action has a process to request
     if (processurl != nil) {
         //excute this url by requesting
-        
+        //In demo purchasing: step0 create an order; step1: place and complete the order.
     }
     
     //implement a button to trigger the next step
@@ -451,8 +451,13 @@
     }
     
     if([nextinput isEqualToString:@"auto"]){
+        NSArray* nextinput = [currentAgent valueForKey:@"next"];
+        self.nextagents = nextinput;
+        
         //[self doTheNext];
         //wait untill this audio is over?
+        //set a singal for audioDidFinished?
+        self.isWaitingAudio = true;
     }
 
 }
@@ -485,6 +490,19 @@
     [self.audioPlayer play];
     
     //dispatch_resume(self.timerSource);
+}
+
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    NSLog(@"Audio finished");
+    
+    if(self.isWaitingAudio){
+        //TODO: check the status of the current process
+        [self doTheNext];
+        
+        self.isWaitingAudio = false;
+    }
 }
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader

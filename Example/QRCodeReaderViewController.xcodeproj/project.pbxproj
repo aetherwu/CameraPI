@@ -44,7 +44,7 @@
 		92DAAA2A1AA955A500C8A567 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		92DAAA2C1AA955FB00C8A567 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C319AABF1CCB4F404641FCBE /* Pods-QRCodeReaderViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReaderViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeReaderViewController/Pods-QRCodeReaderViewController.release.xcconfig"; sourceTree = "<group>"; };
-		CE2960181987F124008FA93B /* QRCodeReadeViewrController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReadeViewrController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2960181987F124008FA93B /* QRCodeReaderViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReaderViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE29601C1987F124008FA93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE29601D1987F124008FA93B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE29601F1987F124008FA93B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		CE2960231987F124008FA93B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CE2960261987F124008FA93B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE2960281987F124008FA93B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CE29602E1987F125008FA93B /* QRCodeReadeViewrControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeReadeViewrControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE29602E1987F125008FA93B /* QRCodeReaderViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeReaderViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2960331987F125008FA93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE2960341987F125008FA93B /* QRCodeReaderViewControllerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewControllerExampleTests.m; sourceTree = "<group>"; };
 		CE29603F1987F140008FA93B /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
@@ -109,9 +109,9 @@
 		CE29600F1987F124008FA93B = {
 			isa = PBXGroup;
 			children = (
-				CE29603E1987F140008FA93B /* QRCodeReadeViewrController */,
-				CE29601A1987F124008FA93B /* QRCodeReadeViewrControllerExample */,
-				CE2960311987F125008FA93B /* QRCodeReadeViewrControllerTest */,
+				CE29603E1987F140008FA93B /* QRCodeReaderViewController */,
+				CE29601A1987F124008FA93B /* QRCodeReaderViewController */,
+				CE2960311987F125008FA93B /* QRCodeReaderViewControllerTest */,
 				CE2960191987F124008FA93B /* Products */,
 				C2E585E755E9BA30976E4196 /* Pods */,
 				C70F20D98364AC94BC7A7522 /* Frameworks */,
@@ -121,13 +121,13 @@
 		CE2960191987F124008FA93B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE2960181987F124008FA93B /* QRCodeReadeViewrController.app */,
-				CE29602E1987F125008FA93B /* QRCodeReadeViewrControllerTests.xctest */,
+				CE2960181987F124008FA93B /* QRCodeReaderViewController.app */,
+				CE29602E1987F125008FA93B /* QRCodeReaderViewControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE29601A1987F124008FA93B /* QRCodeReadeViewrControllerExample */ = {
+		CE29601A1987F124008FA93B /* QRCodeReaderViewController */ = {
 			isa = PBXGroup;
 			children = (
 				92DAAA2C1AA955FB00C8A567 /* Reachability.h */,
@@ -140,7 +140,7 @@
 				CE2960281987F124008FA93B /* Images.xcassets */,
 				CE29601B1987F124008FA93B /* Supporting Files */,
 			);
-			name = QRCodeReadeViewrControllerExample;
+			name = QRCodeReaderViewController;
 			path = QRCodeReaderViewControllerExample;
 			sourceTree = "<group>";
 		};
@@ -157,13 +157,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CE2960311987F125008FA93B /* QRCodeReadeViewrControllerTest */ = {
+		CE2960311987F125008FA93B /* QRCodeReaderViewControllerTest */ = {
 			isa = PBXGroup;
 			children = (
 				CE2960341987F125008FA93B /* QRCodeReaderViewControllerExampleTests.m */,
 				CE2960321987F125008FA93B /* Supporting Files */,
 			);
-			name = QRCodeReadeViewrControllerTest;
+			name = QRCodeReaderViewControllerTest;
 			path = QRCodeReaderViewControllerExampleTests;
 			sourceTree = "<group>";
 		};
@@ -175,7 +175,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CE29603E1987F140008FA93B /* QRCodeReadeViewrController */ = {
+		CE29603E1987F140008FA93B /* QRCodeReaderViewController */ = {
 			isa = PBXGroup;
 			children = (
 				CE29603F1987F140008FA93B /* QRCodeReaderDelegate.h */,
@@ -186,16 +186,16 @@
 				CEAF7A671A16B05400991CF8 /* QRCameraSwitchButton.h */,
 				CEAF7A681A16B05400991CF8 /* QRCameraSwitchButton.m */,
 			);
-			name = QRCodeReadeViewrController;
+			name = QRCodeReaderViewController;
 			path = ../QRCodeReaderViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE2960171987F124008FA93B /* QRCodeReadeViewrController */ = {
+		CE2960171987F124008FA93B /* QRCodeReaderViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE2960381987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReadeViewrController" */;
+			buildConfigurationList = CE2960381987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReaderViewController" */;
 			buildPhases = (
 				17F8F4894D7F8BA75EFC84B5 /* Check Pods Manifest.lock */,
 				CE2960141987F124008FA93B /* Sources */,
@@ -207,14 +207,14 @@
 			);
 			dependencies = (
 			);
-			name = QRCodeReadeViewrController;
+			name = QRCodeReaderViewController;
 			productName = QRCodeReaderViewControllerExample;
-			productReference = CE2960181987F124008FA93B /* QRCodeReadeViewrController.app */;
+			productReference = CE2960181987F124008FA93B /* QRCodeReaderViewController.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CE29602D1987F124008FA93B /* QRCodeReadeViewrControllerTests */ = {
+		CE29602D1987F124008FA93B /* QRCodeReaderViewControllerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE29603B1987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReadeViewrControllerTests" */;
+			buildConfigurationList = CE29603B1987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReaderViewControllerTests" */;
 			buildPhases = (
 				CE29602A1987F124008FA93B /* Sources */,
 				CE29602B1987F124008FA93B /* Frameworks */,
@@ -225,9 +225,9 @@
 			dependencies = (
 				CE2960301987F125008FA93B /* PBXTargetDependency */,
 			);
-			name = QRCodeReadeViewrControllerTests;
+			name = QRCodeReaderViewControllerTests;
 			productName = QRCodeReaderViewControllerExampleTests;
-			productReference = CE29602E1987F125008FA93B /* QRCodeReadeViewrControllerTests.xctest */;
+			productReference = CE29602E1987F125008FA93B /* QRCodeReaderViewControllerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +249,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE2960131987F124008FA93B /* Build configuration list for PBXProject "QRCodeReadeViewrController" */;
+			buildConfigurationList = CE2960131987F124008FA93B /* Build configuration list for PBXProject "QRCodeReaderViewController" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -262,8 +262,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE2960171987F124008FA93B /* QRCodeReadeViewrController */,
-				CE29602D1987F124008FA93B /* QRCodeReadeViewrControllerTests */,
+				CE2960171987F124008FA93B /* QRCodeReaderViewController */,
+				CE29602D1987F124008FA93B /* QRCodeReaderViewControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -349,7 +349,7 @@
 /* Begin PBXTargetDependency section */
 		CE2960301987F125008FA93B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE2960171987F124008FA93B /* QRCodeReadeViewrController */;
+			target = CE2960171987F124008FA93B /* QRCodeReaderViewController */;
 			targetProxy = CE29602F1987F125008FA93B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -453,10 +453,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengzi Wu (AB3WKLCKZS)";
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = QRCodeReadeViewrController;
+				PRODUCT_NAME = QRCodeReaderViewController;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -472,9 +472,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengzi Wu (657TPRFMM2)";
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = QRCodeReadeViewrController;
+				PRODUCT_NAME = QRCodeReaderViewController;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -495,7 +495,7 @@
 				);
 				INFOPLIST_FILE = QRCodeReaderViewControllerExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = QRCodeReadeViewrControllerTests;
+				PRODUCT_NAME = QRCodeReaderViewControllerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -510,7 +510,7 @@
 				);
 				INFOPLIST_FILE = QRCodeReaderViewControllerExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = QRCodeReadeViewrControllerTests;
+				PRODUCT_NAME = QRCodeReaderViewControllerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -518,7 +518,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE2960131987F124008FA93B /* Build configuration list for PBXProject "QRCodeReadeViewrController" */ = {
+		CE2960131987F124008FA93B /* Build configuration list for PBXProject "QRCodeReaderViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE2960361987F125008FA93B /* Debug */,
@@ -527,7 +527,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE2960381987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReadeViewrController" */ = {
+		CE2960381987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReaderViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE2960391987F125008FA93B /* Debug */,
@@ -536,7 +536,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE29603B1987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReadeViewrControllerTests" */ = {
+		CE29603B1987F125008FA93B /* Build configuration list for PBXNativeTarget "QRCodeReaderViewControllerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE29603C1987F125008FA93B /* Debug */,
