@@ -74,18 +74,16 @@
     }];
     
     self.isWaitingAudio = false;
-    // Do any additional setup after loading the view, typically from a nib.
     
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     //[self playAudio:@"http://lostpub.com/27rauschenbergempire1.mp3"];
     
     [self startCamera];
-    //[self startTimer];
+    [self startTimer];
     
     //[self takePhoto];
     //[self sendPhoto];
 
-    //scan and send stored photos when offline.
     
 }
 
@@ -187,7 +185,7 @@
                                orientation:(compressedPhoto.imageOrientation)];
                  
                  //write to album
-                 //UIImageWriteToSavedPhotosAlbum(scaledImage, nil, nil, nil);
+                 UIImageWriteToSavedPhotosAlbum(scaledImage, nil, nil, nil);
                  NSLog(@"photo saved");
                  
                  /*
@@ -260,6 +258,7 @@
          }];
 }
 
+- (void)sendPhotoToAWS: (UIImage *) scaledImage {}
 
 - (void)sendPhoto: (UIImage *) scaledImage {
     
@@ -386,7 +385,6 @@
 - (IBAction)shotAction:(id)sender {
     [self takePhoto];
 }
-
 
 - (void)fetchAgent: (NSString *)url {
 
