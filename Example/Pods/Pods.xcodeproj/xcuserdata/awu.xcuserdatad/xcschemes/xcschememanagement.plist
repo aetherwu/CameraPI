@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-QRCodeReaderViewController-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-QRCodeReaderViewController-ZXingObjC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,15 +24,75 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-QRCodeReaderViewControllerTests-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-QRCodeReaderViewControllerTests-ZXingObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-QRCodeReaderViewControllerTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ZXingObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>20BF7ACCC81DD905D811FD4C</key>
+		<key>03DF80FFE1B8C6F14ADDC663</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>723879EB058CBCC87E048407</key>
+		<key>11791748F92BFD0C66031C28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B01D2C4B71E527B9DDC9712</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3F711122064F8E83A3D011F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CB4868A73875196958BA402</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D16E76ABACA6134F1097BDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A20BC05C3CEAB39EEED9C38B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B66B367283DD98A3B53F3363</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E76245318447ECEE3D0ED056</key>
 		<dict>
 			<key>primary</key>
 			<true/>

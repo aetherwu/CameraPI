@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRCodeReaderViewControllerExample/ViewController.m"
-            timestampString = "449950529.842985"
+            timestampString = "450033305.685032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "-takePhoto"
             landmarkType = "5">
          </BreakpointContent>

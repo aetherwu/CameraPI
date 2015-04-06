@@ -25,15 +25,17 @@
  */
 
 #import "ViewController.h"
-#import "QRCodeReaderViewController.h"
 #import "Reachability.h"
-
 #import "AFNetworking.h"
+#import "JPSVolumeButtonHandler.h"
+#import "ZXingObjC.h"
+
+#import <ImageIO/ImageIO.h>
+#import <AudioToolbox/AudioServices.h>
 
 #import <AssetsLibrary/ALAsset.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
-#import <AudioToolbox/AudioServices.h>
 
 
 @interface ViewController ()<AVAudioPlayerDelegate>
@@ -49,6 +51,7 @@
 @property (strong, nonatomic) AFHTTPRequestOperationManager *manager;
 @property (strong, nonatomic) NSArray *nextagents;
 @property BOOL isWaitingAudio;
+@property (nonatomic, strong) JPSVolumeButtonHandler *volumeButtonHandler;
 @end
 
 
@@ -63,13 +66,20 @@
 {
     [super viewDidLoad];
     
+    self.volumeButtonHandler = [JPSVolumeButtonHandler volumeButtonHandlerWithUpBlock:^{
+        // Volume Up Button Pressed
+        [self takePhoto];
+    } downBlock:^{
+        // Volume Down Button Pressed
+    }];
+    
     self.isWaitingAudio = false;
     // Do any additional setup after loading the view, typically from a nib.
     
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     //[self playAudio:@"http://lostpub.com/27rauschenbergempire1.mp3"];
     
-    //[self startCamera];
+    [self startCamera];
     //[self startTimer];
     
     //[self takePhoto];
@@ -177,9 +187,10 @@
                                orientation:(compressedPhoto.imageOrientation)];
                  
                  //write to album
-                 UIImageWriteToSavedPhotosAlbum(scaledImage, nil, nil, nil);
+                 //UIImageWriteToSavedPhotosAlbum(scaledImage, nil, nil, nil);
                  NSLog(@"photo saved");
                  
+                 /*
                  //send photo to server
                  //IF WI-FI
                  Reachability *reachability = [Reachability reachabilityForInternetConnection];
@@ -199,8 +210,51 @@
                  {
                      //3G
                  }
+                  */
                  
-                 //analyize QR code
+                 //analyize QR code when the photo as taken menually
+                 // create the image somehow, load from file, draw into it...
+                 CGImageRef imageToDecode =  scaledImage.CGImage;
+                 ZXLuminanceSource *source = [[ZXCGImageLuminanceSource alloc] initWithCGImage:imageToDecode];
+                 ZXBinaryBitmap *bitmap = [ZXBinaryBitmap binaryBitmapWithBinarizer:[ZXHybridBinarizer binarizerWithSource:source]];
+                 
+                 NSError *error = nil;
+                 
+                 // There are a number of hints we can give to the reader, including
+                 // possible formats, allowed lengths, and the string encoding.
+                 ZXDecodeHints *hints = [ZXDecodeHints hints];
+                 
+                 ZXMultiFormatReader *reader = [ZXMultiFormatReader reader];
+                 ZXResult *result = [reader decode:bitmap
+                                             hints:hints
+                                             error:&error];
+                 if (result) {
+                     // The coded result as a string. The raw data can be accessed with
+                     // result.rawBytes and result.length.
+                     NSString *contents = result.text;
+                     
+                     // The barcode format, such as a QR code or UPC-A
+                     //ZXBarcodeFormat format = result.barcodeFormat;
+                     
+                     NSLog(@"Found content: %@", contents);
+                     
+                     NSURL *candidateURL = [NSURL URLWithString:contents];
+                     if([candidateURL.host isEqualToString:@"lostpub.com"] && [candidateURL.scheme isEqualToString:@"http"]) {
+                         //validated url address
+                         //send to agent
+                         [self fetchAgent:contents];
+                     }else{
+                         NSLog(@"not an valid url");
+                         
+                     }
+                     
+                     
+                 } else {
+                     // Use error to determine why we didn't get a result, such as a barcode
+                     // not being found, an invalid checksum, or a format inconsistency.
+                     NSLog(@"%@", error);
+                 }
+                 
                  
              }
          }];
@@ -333,55 +387,6 @@
     [self takePhoto];
 }
 
-- (IBAction)scanAction:(id)sender
-{
-    //////MODIFY IT TO: SHOT a photo and process
-    //////OR stop at the first recognition
-    
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    //dispatch_suspend(self.timerSource);
-    
-    static QRCodeReaderViewController *reader = nil;
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        reader                        = [QRCodeReaderViewController new];
-        reader.modalPresentationStyle = UIModalPresentationFormSheet;
-    });
-    reader.delegate = self;
-    
-    [reader setCompletionWithBlock:^(NSString *resultAsString) {
-        NSLog(@"Completion with result: %@", resultAsString);
-    }];
-    
-    [self presentViewController:reader animated:YES completion:NULL];
-}
-
-#pragma mark - QRCodeReader Delegate Methods
-
-- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
-{
-    //if no QR found, send notification
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-    
-    //prevent multuple threads
-    
-        //Valid url?
-        NSURL *candidateURL = [NSURL URLWithString:result];
-        if([candidateURL.host isEqualToString:@"lostpub.com"] && [candidateURL.scheme isEqualToString:@"http"]) {
-            //validated url address
-            [self fetchAgent:result];
-        }else{
-            NSLog(@"not an url");
-            
-        }
-        //[self startCamera];
-        //dispatch_resume(self.timerSource);
-
-    
-}
 
 - (void)fetchAgent: (NSString *)url {
 
@@ -503,12 +508,6 @@
         
         self.isWaitingAudio = false;
     }
-}
-
-- (void)readerDidCancel:(QRCodeReaderViewController *)reader
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    //dispatch_resume(self.timerSource);
 }
 
 

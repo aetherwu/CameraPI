@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -19,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLn-cJ-hdE">
-                                <rect key="frame" x="306" y="0.0" width="295" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="601" height="600"/>
                                 <color key="backgroundColor" white="0.75" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="295" id="QEc-62-QOg"/>
+                                    <constraint firstAttribute="width" constant="601" id="QEc-62-QOg"/>
                                     <constraint firstAttribute="height" constant="600" id="WVY-IP-pBh"/>
                                 </constraints>
                                 <state key="normal">
@@ -30,15 +29,6 @@
                                 </state>
                                 <connections>
                                     <action selector="shotAction:" destination="BYZ-38-t0r" eventType="touchDown" id="EWx-c8-lxH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85N-3I-SzR">
-                                <rect key="frame" x="0.0" y="0.0" width="308" height="600"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="scanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cdm-fz-7s6"/>
                                 </connections>
                             </button>
                         </subviews>

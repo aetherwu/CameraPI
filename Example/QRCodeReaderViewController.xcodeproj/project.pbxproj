@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ABC9C061A8D5F7A25567A60 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01F5C689611B2758380709 /* libPods.a */; };
 		922AF3FB1A982CAC00903852 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922AF3FA1A982CAC00903852 /* CFNetwork.framework */; };
 		922AF3FD1A982CB200903852 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922AF3FC1A982CB200903852 /* AudioToolbox.framework */; };
 		922AF3FF1A982CC000903852 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922AF3FE1A982CC000903852 /* QuartzCore.framework */; };
 		922AF4131A99537D00903852 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922AF4121A99537D00903852 /* AssetsLibrary.framework */; };
+		92B598FE1AD23C0E00B19D2F /* JPSVolumeButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B598FD1AD23C0E00B19D2F /* JPSVolumeButtonHandler.m */; };
+		92B599001AD23C6B00B19D2F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B598FF1AD23C6B00B19D2F /* MediaPlayer.framework */; };
+		92B599021AD23C8B00B19D2F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B599011AD23C8B00B19D2F /* AVFoundation.framework */; };
+		92B599041AD2F36300B19D2F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B599031AD2F36200B19D2F /* ImageIO.framework */; };
 		92DAAA2B1AA955A500C8A567 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DAAA2A1AA955A500C8A567 /* Reachability.m */; };
 		CE29601E1987F124008FA93B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29601D1987F124008FA93B /* main.m */; };
 		CE2960211987F124008FA93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2960201987F124008FA93B /* AppDelegate.m */; };
@@ -18,10 +23,6 @@
 		CE2960271987F124008FA93B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2960251987F124008FA93B /* Main.storyboard */; };
 		CE2960291987F124008FA93B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2960281987F124008FA93B /* Images.xcassets */; };
 		CE2960351987F125008FA93B /* QRCodeReaderViewControllerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2960341987F125008FA93B /* QRCodeReaderViewControllerExampleTests.m */; };
-		CE2960421987F140008FA93B /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2960411987F140008FA93B /* QRCodeReaderViewController.m */; };
-		CE2960431987F140008FA93B /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2960411987F140008FA93B /* QRCodeReaderViewController.m */; };
-		CEAF7A661A16A31600991CF8 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAF7A651A16A31600991CF8 /* QRCodeReaderView.m */; };
-		CEAF7A691A16B05400991CF8 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAF7A681A16B05400991CF8 /* QRCameraSwitchButton.m */; };
 		EAF169B9EC2F4A35EDF78D75 /* libPods-QRCodeReaderViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C9A6BBE99D5B1BABD96F80 /* libPods-QRCodeReaderViewController.a */; };
 /* End PBXBuildFile section */
 
@@ -37,10 +38,16 @@
 
 /* Begin PBXFileReference section */
 		6264AD10E7C37324CE677E61 /* Pods-QRCodeReaderViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReaderViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeReaderViewController/Pods-QRCodeReaderViewController.debug.xcconfig"; sourceTree = "<group>"; };
+		7A01F5C689611B2758380709 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		922AF3FA1A982CAC00903852 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		922AF3FC1A982CB200903852 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		922AF3FE1A982CC000903852 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		922AF4121A99537D00903852 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		92B598FC1AD23C0E00B19D2F /* JPSVolumeButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSVolumeButtonHandler.h; sourceTree = "<group>"; };
+		92B598FD1AD23C0E00B19D2F /* JPSVolumeButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSVolumeButtonHandler.m; sourceTree = "<group>"; };
+		92B598FF1AD23C6B00B19D2F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		92B599011AD23C8B00B19D2F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		92B599031AD2F36200B19D2F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		92DAAA2A1AA955A500C8A567 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		92DAAA2C1AA955FB00C8A567 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C319AABF1CCB4F404641FCBE /* Pods-QRCodeReaderViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReaderViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeReaderViewController/Pods-QRCodeReaderViewController.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,13 +63,6 @@
 		CE29602E1987F125008FA93B /* QRCodeReaderViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeReaderViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2960331987F125008FA93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE2960341987F125008FA93B /* QRCodeReaderViewControllerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewControllerExampleTests.m; sourceTree = "<group>"; };
-		CE29603F1987F140008FA93B /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
-		CE2960401987F140008FA93B /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
-		CE2960411987F140008FA93B /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
-		CEAF7A641A16A31600991CF8 /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
-		CEAF7A651A16A31600991CF8 /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
-		CEAF7A671A16B05400991CF8 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
-		CEAF7A681A16B05400991CF8 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
 		F1C9A6BBE99D5B1BABD96F80 /* libPods-QRCodeReaderViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QRCodeReaderViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,11 +71,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B599041AD2F36300B19D2F /* ImageIO.framework in Frameworks */,
+				92B599021AD23C8B00B19D2F /* AVFoundation.framework in Frameworks */,
+				92B599001AD23C6B00B19D2F /* MediaPlayer.framework in Frameworks */,
 				922AF4131A99537D00903852 /* AssetsLibrary.framework in Frameworks */,
 				922AF3FF1A982CC000903852 /* QuartzCore.framework in Frameworks */,
 				922AF3FD1A982CB200903852 /* AudioToolbox.framework in Frameworks */,
 				922AF3FB1A982CAC00903852 /* CFNetwork.framework in Frameworks */,
 				EAF169B9EC2F4A35EDF78D75 /* libPods-QRCodeReaderViewController.a in Frameworks */,
+				4ABC9C061A8D5F7A25567A60 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92B598FB1AD23C0E00B19D2F /* JPSVolumeButtonHandler */ = {
+			isa = PBXGroup;
+			children = (
+				92B598FC1AD23C0E00B19D2F /* JPSVolumeButtonHandler.h */,
+				92B598FD1AD23C0E00B19D2F /* JPSVolumeButtonHandler.m */,
+			);
+			path = JPSVolumeButtonHandler;
+			sourceTree = "<group>";
+		};
 		C2E585E755E9BA30976E4196 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +114,15 @@
 		C70F20D98364AC94BC7A7522 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92B599031AD2F36200B19D2F /* ImageIO.framework */,
+				92B598FF1AD23C6B00B19D2F /* MediaPlayer.framework */,
+				922AF4121A99537D00903852 /* AssetsLibrary.framework */,
+				922AF3FE1A982CC000903852 /* QuartzCore.framework */,
+				922AF3FC1A982CB200903852 /* AudioToolbox.framework */,
+				922AF3FA1A982CAC00903852 /* CFNetwork.framework */,
+				92B599011AD23C8B00B19D2F /* AVFoundation.framework */,
 				F1C9A6BBE99D5B1BABD96F80 /* libPods-QRCodeReaderViewController.a */,
+				7A01F5C689611B2758380709 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,7 +130,6 @@
 		CE29600F1987F124008FA93B = {
 			isa = PBXGroup;
 			children = (
-				CE29603E1987F140008FA93B /* QRCodeReaderViewController */,
 				CE29601A1987F124008FA93B /* QRCodeReaderViewController */,
 				CE2960311987F125008FA93B /* QRCodeReaderViewControllerTest */,
 				CE2960191987F124008FA93B /* Products */,
@@ -130,6 +150,7 @@
 		CE29601A1987F124008FA93B /* QRCodeReaderViewController */ = {
 			isa = PBXGroup;
 			children = (
+				92B598FB1AD23C0E00B19D2F /* JPSVolumeButtonHandler */,
 				92DAAA2C1AA955FB00C8A567 /* Reachability.h */,
 				92DAAA2A1AA955A500C8A567 /* Reachability.m */,
 				CE29601F1987F124008FA93B /* AppDelegate.h */,
@@ -147,10 +168,6 @@
 		CE29601B1987F124008FA93B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				922AF4121A99537D00903852 /* AssetsLibrary.framework */,
-				922AF3FE1A982CC000903852 /* QuartzCore.framework */,
-				922AF3FC1A982CB200903852 /* AudioToolbox.framework */,
-				922AF3FA1A982CAC00903852 /* CFNetwork.framework */,
 				CE29601C1987F124008FA93B /* Info.plist */,
 				CE29601D1987F124008FA93B /* main.m */,
 			);
@@ -173,21 +190,6 @@
 				CE2960331987F125008FA93B /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CE29603E1987F140008FA93B /* QRCodeReaderViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CE29603F1987F140008FA93B /* QRCodeReaderDelegate.h */,
-				CE2960401987F140008FA93B /* QRCodeReaderViewController.h */,
-				CE2960411987F140008FA93B /* QRCodeReaderViewController.m */,
-				CEAF7A641A16A31600991CF8 /* QRCodeReaderView.h */,
-				CEAF7A651A16A31600991CF8 /* QRCodeReaderView.m */,
-				CEAF7A671A16B05400991CF8 /* QRCameraSwitchButton.h */,
-				CEAF7A681A16B05400991CF8 /* QRCameraSwitchButton.m */,
-			);
-			name = QRCodeReaderViewController;
-			path = ../QRCodeReaderViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QRCodeReaderViewController/Pods-QRCodeReaderViewController-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -326,12 +328,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2960241987F124008FA93B /* ViewController.m in Sources */,
-				CEAF7A691A16B05400991CF8 /* QRCameraSwitchButton.m in Sources */,
+				92B598FE1AD23C0E00B19D2F /* JPSVolumeButtonHandler.m in Sources */,
 				CE2960211987F124008FA93B /* AppDelegate.m in Sources */,
 				92DAAA2B1AA955A500C8A567 /* Reachability.m in Sources */,
-				CEAF7A661A16A31600991CF8 /* QRCodeReaderView.m in Sources */,
 				CE29601E1987F124008FA93B /* main.m in Sources */,
-				CE2960421987F140008FA93B /* QRCodeReaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2960351987F125008FA93B /* QRCodeReaderViewControllerExampleTests.m in Sources */,
-				CE2960431987F140008FA93B /* QRCodeReaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -436,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,7 +452,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengzi Wu (AB3WKLCKZS)";
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = QRCodeReaderViewController;
@@ -472,7 +471,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengzi Wu (657TPRFMM2)";
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = QRCodeReaderViewController;
 				PROVISIONING_PROFILE = "";

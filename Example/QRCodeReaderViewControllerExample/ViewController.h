@@ -25,16 +25,15 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "QRCodeReaderDelegate.h"
 #import "AVFoundation/AVAudioPlayer.h"
 #import "AVFoundation/AVCaptureSession.h"
 
-@interface ViewController : UIViewController <QRCodeReaderDelegate>
+@interface ViewController : UIViewController
 {
     AVCaptureSession *photoSession;
 }
 
-- (IBAction)scanAction:(id)sender;
+
 - (IBAction)shotAction:(id)sender;
 
 @end
