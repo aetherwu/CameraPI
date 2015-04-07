@@ -1,12 +1,16 @@
 ##Forked
 
-Camera personal assistant that bases on QR reader.
-Original project: [QRReaderViewController](https://github.com/yannickl/QRCodeReaderViewController.git)
+A personal assistant that bases on camera and QR.
+
+Components:
+Recognize QR in NSimage: [ZXing](https://github.com/zxing/zxing/)
+Volume button handler: [JPSVolumeButtonHandler](https://github.com/jpsim/JPSVolumeButtonHandler)
+Network: [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 
 ##QR for testing:
 ![](https://s3.amazonaws.com/f.cl.ly/items/0K180D4605371j331q0d/Screen%20Shot%202015-04-04%20at%203.25.00%20PM.png)
 
-##Server code
+##Data flow structure
 
 	get '/agent/:agent_id' do
 		content_type :json
