@@ -2,9 +2,9 @@
 
 A personal assistant that bases on camera and QR.
 
-Components:
-Recognize QR in NSimage: [ZXing](https://github.com/zxing/zxing/)
-Volume button handler: [JPSVolumeButtonHandler](https://github.com/jpsim/JPSVolumeButtonHandler)
+Components:  
+Recognize QR in NSimage: [ZXing](https://github.com/zxing/zxing/)  
+Volume button handler: [JPSVolumeButtonHandler](https://github.com/jpsim/JPSVolumeButtonHandler)  
 Network: [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 
 ##QR for testing:
