@@ -276,8 +276,8 @@
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         
         //send photo to server
-        //NSString *urlString = [NSString stringWithFormat:@"http://lostpub.com/camera.php"];
-        NSString *urlString = [NSString stringWithFormat:@"http://lostpub.com/camera.php"];
+        //NSString *urlString = [NSString stringWithFormat:@"http://HOST_URL/camera.php"];
+        NSString *urlString = [NSString stringWithFormat:@"http://HOST_URL/camera.php"];
         [request setURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"POST"];
         
@@ -338,8 +338,8 @@
                                   NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
                                   
                                   //send photo to server
-                                  //NSString *urlString = [NSString stringWithFormat:@"http://lostpub.com/camera.php"];
-                                  NSString *urlString = [NSString stringWithFormat:@"http://192.168.1.116/camera.php"];
+                                  //NSString *urlString = [NSString stringWithFormat:@"http://HOST_URL/camera.php"];
+                                  NSString *urlString = [NSString stringWithFormat:@"http://HOST_URL/camera.php"];
                                   [request setURL:[NSURL URLWithString:urlString]];
                                   [request setHTTPMethod:@"POST"];
                                   
